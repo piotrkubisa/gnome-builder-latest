@@ -1,10 +1,10 @@
-# https://github.com/CromFr/docker-gnome-builder/blob/master/Dockerfile
+# Adapted from: https://github.com/CromFr/docker-gnome-builder/blob/master/Dockerfile
 
 FROM fedora
 
 RUN yum update -y \
 	&& yum install -y dnf dnf-plugins-core \
-	&& dnf copr -y enable bochecha/gnome-builder \
+	&& dnf copr -y enable piqus/gnome-builder \
 	&& dnf install -y gnome-builder
 
 RUN useradd -u 1000 -d /home/dev -m dev
